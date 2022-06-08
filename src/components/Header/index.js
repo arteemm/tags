@@ -26,12 +26,16 @@ class Header {
 
   render() {
     const component = document.createElement('header');
+    const wrapper = document.createElement('div');
     component.className = 'header';
+    wrapper.className = 'wrapper header__wrapper';
 
-    component.append(
+    wrapper.append(
       this.createForm(),
       this.createSwitcher(),
     );
+
+    component.append(wrapper);
 
     return component;
   }

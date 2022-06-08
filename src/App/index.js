@@ -5,6 +5,7 @@ class App {
   constructor() {
     this.tagArr = this.getLocalStorage() || [];
     this.tagListElem = document.createElement('div');
+    this.tagListElem.className = 'tags__list';
     this.viewTags = new ViewTags(this.tagListElem);
     this.isReadOnlyMode = false;
   }
@@ -84,12 +85,24 @@ class App {
 
   render() {
     const main = document.getElementById('root');
+    const wrapper = document.createElement('div');
+    const footer = document.createElement('div');
+    wrapper.className = 'wrapper';
+    footer.className = 'footer';
+
+    footer.append(
+      this.createSaveButton(),
+      this.createClearButton(),
+    );
+
+    wrapper.append(
+      this.tagListElem,
+    );
 
     main.append(
       this.createHeader(),
-      this.tagListElem,
-      this.createSaveButton(),
-      this.createClearButton(),
+      wrapper,
+      footer,
     );
     
     return main;

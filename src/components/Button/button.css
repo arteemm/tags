@@ -1,0 +1,41 @@
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: medium;
+  font-weight: 400;
+  color: #fff;
+  background-color: #6667ab;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  transition: all 0.3s;
+}
+
+.button:disabled {
+  opacity: 0.5;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.control {
+  border-radius: 0px;
+  width: 60px;
+  height: auto;
+}
+
+.close {
+  background: none;
+  color: #6667ab;
+  border-radius: none;
+  width: auto;
+  height: auto;
+}
+
+.close:hover {
+  transform: scale(1.5);
+}
+

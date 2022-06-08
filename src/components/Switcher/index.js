@@ -20,11 +20,12 @@ class Switcher {
   render() {
     const wrapper = document.createElement('div');
     wrapper.textContent = 'ReadOnly Mode';
+    wrapper.className = 'switch-wrapper';
     const label = document.createElement('label');
     const span = document.createElement('span');
 
     label.className = 'switch';
-    span.className = 'switch__slider';
+    span.className = 'switch__slider round';
 
     label.append(
       this.createInput(),

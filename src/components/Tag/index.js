@@ -14,7 +14,7 @@ class Tag {
       type: 'button',
       onClick: () => this.onClick(this.id),
     }).render();
-    button.classList.add('icon', 'control');
+    button.classList.add('close', 'control');
 
     return button;
   }
