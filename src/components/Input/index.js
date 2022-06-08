@@ -1,3 +1,5 @@
+import './input.css';
+
 class Input {
   constructor(props) {
     this.type = props.type;

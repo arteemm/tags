@@ -1,3 +1,5 @@
+import './button.css';
+
 class Button {
   constructor(props) {
     this.label = props.label;
@@ -11,8 +13,8 @@ class Button {
     component.type = this.type;
     component.className = 'button';
     
-    if (this.OnClick) {
-      component.addEventListener('click', this.OnClick.bind(this));
+    if (this.onClick) {
+      component.addEventListener('click', this.onClick.bind(this));
     }
 
     return component;

@@ -1,9 +1,10 @@
-import Button from './Button';
-import Input from './Input';
+import './form.css';
+import Button from '../Button';
+import Input from '../Input';
 
 class Form {
   constructor(props) {
-    this.OnSubmit = props.onSubmit;
+    this.onSubmit = props.onSubmit;
     this.inputValue = '';
     this.onChange = (e) => this.setInputValue(e.target.value);
     this.clearInput = null;
@@ -30,15 +31,18 @@ class Form {
       label: 'Add',
       type: 'submit',
     }).render();
-
+    button.classList.add('control');
+    
     return button;
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
-    this.OnSubmit(this.inputValue);
-    this.clearInput();
+    if (this.inputValue) {
+      this.onSubmit(this.inputValue);
+      this.clearInput();
+      this.inputValue = '';
+    }
   }
 
   createLabel() {
